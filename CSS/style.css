@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Monsieur+La+Doulaise&family=Outfit:wght@100..900&display=swap');
+:root {
+    --cortitulo: #78a9cc;
+    --cordotexto: #758493;
+    --cordosubtitulo: #b59b80;
+    --cordaborda: #dcc0a2;
+    --cordofundo: #f0ffff96; /* Cor de fundo da caixa com transparência */
+
+    --fontetitulo: "Petit Formal Script";
+    --fontetexto: "Outfit";
+    --fontetitulo2:"Monsieur La Doulaise", cursive;
+    
+}
+
+
+/* Reset básico e configurações gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('/imagem/fundo_ursos.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    overflow-x: hidden;
+    padding-bottom: 80px;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+header {
+    font-size: clamp(35px, 6vw, 45px);
+    font-family: var(--fontetitulo);
+    font-s;
+    color: var(--cortitulo);
+    margin-top: 50px;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(31, 31, 31, 0.162);
+    opacity: 0;
+    transform: translateY(30px);
+    animation: surgir 1s ease-out forwards;
+}
+
+@keyframes surgir {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+main {
+    width: 100%;
+    max-width: 1000px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinha o conteúdo ao topo */
+    flex-grow: 1;
+}
+
+/* Novo container para controlar a largura comum das duas seções */
+.conteudo-principal {
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Espaçamento entre a caixa principal e a seção do link */
+    width: 100%;
+    max-width: 700px; /* Largura máxima comum para ambas as seções */
+    align-items: center; /* Centraliza os itens dentro deste container */
+}
+
+.caixa {
+    width: 100%; /* Ocupa a largura total do .conteudo-principal */
+    min-height: 200px;
+    padding: 30px; /* Espaçamento interno entre conteúdo e borda tracejada */
+    box-sizing: border-box;
+    background-color: var(--cordofundo);
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.231);
+    border-radius: 10px;
+    border: 2.5px dashed var(--cordaborda); /* Apenas esta caixa tem a borda tracejada */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 15px; /* Espaçamento entre o h2 e o p */
+}
+
+.links-container {
+    width: 100%; /* Garante que o container ocupe a largura do conteudo-principal */
+    display: flex; /* Transforma em um container flexível */
+    flex-wrap: wrap; /* Permite que os itens quebrem para a linha de baixo em telas menores */
+    justify-content: center; /* Centraliza os links quando há espaço */
+    gap: 20px; /* Espaço entre as caixas de link */
+}
+
+/* Estilo para a "caixa" do link, sem borda tracejada, mas com a mesma largura */
+.link-acesso {
+    flex: 1; /* Faz com que cada link-acesso ocupe o espaço disponível igualmente */
+    min-width: 250px; /* Garante uma largura mínima para cada link em telas pequenas */
+    max-width: 48%; /* Limita a largura para permitir dois links lado a lado com gap */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: transparent;
+    box-shadow: none;
+    border-radius: 10px;
+}
+
+
+h2 {
+    font-family: var(--fontetitulo);
+    font-size: clamp(20px, 3.5vw, 28px);
+    color: var(--cordosubtitulo);
+    margin: 0;
+}
+
+.texto {
+    font-size: clamp(16px, 2.5vw, 20px);
+    font-family: var(--fontetexto);
+    text-align: justify;
+    color: var(--cortitulo);
+    line-height: 1.6;
+    margin: 0; /* Remove margem padrão do parágrafo */
+}
+
+.link-fraldas {
+    display: inline-block;
+    padding: 30px 30px;
+    background-color: #b59b80d4
+    
+
+;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.231);
+    border-radius: 10px;
+    color: azure;
+    font-family: var(--fontetexto);
+    font-weight: bold;
+    text-decoration: none;
+    font-size: clamp(16px, 2.5vw, 20px);
+    transition: background-color 0.3s ease;
+    
+}
+
+.link-fraldas:hover {
+    background-color: #cfbb9e;
+}
+
+/* --- Media Queries para Responsividade --- */
+@media (max-width: 768px) {
+    header {
+        margin-top: 30px;
+    }
+
+    main {
+        padding: 15px;
+    }
+
+    .conteudo-principal {
+        max-width: 90%; /* Permite que o container principal ocupe mais espaço em telas menores */
+    }
+
+    .caixa {
+        padding: 20px;
+        min-height: unset;
+    }
+
+    .texto {
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        font-size: clamp(30px, 8vw, 40px);
+        margin-top: 20px;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    .caixa {
+        padding: 15px;
+    }
+
+    .link-fraldas {
+        padding: 12px 20px;
+        font-size: clamp(14px, 4vw, 18px);
+    }
+}
