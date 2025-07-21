@@ -170,6 +170,11 @@ h2 {
     main {
         padding: 15px;
     }
+    body {
+    background-image: url('../imagem/fundo_ursos_mobile.png'); /* uma versão cortada */
+    background-size: cover;
+    background-position: center top;
+    }
 
     .conteudo-principal {
         max-width: 90%; /* Permite que o container principal ocupe mais espaço em telas menores */
