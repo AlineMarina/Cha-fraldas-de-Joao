@@ -27,7 +27,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url('/imagem/fundo_ursos.jpg');
+    background-image: url('../imagem/fundo_ursos.jpg');
     background-attachment: fixed;
     background-size: cover;
     background-position: center center;
